@@ -1,2 +1,2 @@
 # quangchuc.github.io
-This is Chuc's personal github
+This is github website of NGUYEN Quang Chuc
