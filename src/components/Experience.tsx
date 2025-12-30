@@ -130,7 +130,7 @@ const Experience: React.FC = () => {
       title: "RMM — Real-World Asset Lending Protocol",
       context:
         "RMM is a lending and borrowing protocol backed by tokenized real estate assets, enabling users to borrow and lend against real-world collateral.",
-      role: "Lead Smart Contract Engineer — protocol architecture, implementation, testing, and deployment.",
+      role: "Smart Contract Engineer — protocol architecture, implementation, testing, and deployment.",
       whatIBuilt: [
         "Core lending & borrowing logic for RWA-backed tokens",
         "Collateralization, health factor, and liquidation mechanisms",
@@ -169,7 +169,7 @@ const Experience: React.FC = () => {
       title: "RealToken Ecosystem Governance (DAO & Treasury)",
       context:
         "Governance system allowing RealToken ecosystem participants to propose, vote on, and execute protocol-level decisions in a decentralized and transparent way.",
-      role: "Lead Smart Contract Engineer — governance architecture and implementation.",
+      role: "Smart Contract Engineer — governance architecture and implementation.",
       whatIBuilt: [
         "Governance contracts based on Governor pattern",
         "Proposal lifecycle: creation, voting, execution",
@@ -225,9 +225,9 @@ const Experience: React.FC = () => {
       delay: 400,
     },
     {
-      title: "ZEur — Zero-Interest Lending Protocol (R&D)",
+      title: "ZEUR — Zero-Interest Lending Protocol (R&D)",
       context:
-        "ZEur explores a novel lending model where borrowers pay 0% interest, while lenders earn yield via collateral deployed into liquid staking tokens.",
+        "ZEUR explores a novel lending model where borrowers pay 0% interest, while lenders earn yield via collateral deployed into liquid staking tokens.",
       role: "Protocol researcher and designer.",
       explores: [
         "Interest-free borrowing mechanics",
