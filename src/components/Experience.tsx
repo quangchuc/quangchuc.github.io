@@ -1,0 +1,262 @@
+import React from "react";
+import Reveal from "./Reveal";
+import { Badge } from "./ui/badge";
+import { cn } from "@/lib/utils";
+
+interface ProtocolWorkProps {
+  title: string;
+  context: string;
+  role: string;
+  whatIBuilt: string[];
+  outcome: string[];
+  keyDecisions?: string[];
+  explores?: string[];
+  status?: string;
+  delay?: number;
+}
+
+const ProtocolCard: React.FC<ProtocolWorkProps> = ({
+  title,
+  context,
+  role,
+  whatIBuilt,
+  outcome,
+  keyDecisions,
+  explores,
+  status,
+  delay = 0,
+}) => {
+  return (
+    <Reveal delay={delay} className="h-full">
+      <div
+        className={cn(
+          "p-6 md:p-8 rounded-xl h-full",
+          "border border-border",
+          "bg-background/50",
+          "hover:border-primary/30 transition-colors duration-300"
+        )}
+      >
+        <h3 className="text-xl md:text-2xl font-semibold mb-4">{title}</h3>
+
+        <div className="space-y-6 text-muted-foreground">
+          <div>
+            <h4 className="text-sm font-semibold text-foreground/80 uppercase tracking-wide mb-2">
+              Context
+            </h4>
+            <p>{context}</p>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold text-foreground/80 uppercase tracking-wide mb-2">
+              My Role
+            </h4>
+            <p>{role}</p>
+          </div>
+
+          {keyDecisions && keyDecisions.length > 0 && (
+            <div>
+              <h4 className="text-sm font-semibold text-foreground/80 uppercase tracking-wide mb-2">
+                Key Design Decisions
+              </h4>
+              <ul className="space-y-1">
+                {keyDecisions.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {explores && explores.length > 0 && (
+            <div>
+              <h4 className="text-sm font-semibold text-foreground/80 uppercase tracking-wide mb-2">
+                What It Explores
+              </h4>
+              <ul className="space-y-1">
+                {explores.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <div>
+            <h4 className="text-sm font-semibold text-foreground/80 uppercase tracking-wide mb-2">
+              {explores ? "Status" : "What I Built"}
+            </h4>
+            {status ? (
+              <p>{status}</p>
+            ) : (
+              <ul className="space-y-1">
+                {whatIBuilt.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          {outcome.length > 0 && !status && (
+            <div>
+              <h4 className="text-sm font-semibold text-foreground/80 uppercase tracking-wide mb-2">
+                Outcome
+              </h4>
+              <ul className="space-y-1">
+                {outcome.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+    </Reveal>
+  );
+};
+
+const Experience: React.FC = () => {
+  const protocols: ProtocolWorkProps[] = [
+    {
+      title: "RMM — Real-World Asset Lending Protocol",
+      context:
+        "RMM is a lending and borrowing protocol backed by tokenized real estate assets, enabling users to borrow and lend against real-world collateral.",
+      role: "Lead Smart Contract Engineer — protocol architecture, implementation, testing, and deployment.",
+      whatIBuilt: [
+        "Core lending & borrowing logic for RWA-backed tokens",
+        "Collateralization, health factor, and liquidation mechanisms",
+        "Upgradeable, modular contract architecture (production-grade)",
+        "Comprehensive test suite: unit, integration, fuzz, and invariant tests",
+        "Gas optimization and storage layout design",
+        "Close collaboration with external auditors",
+      ],
+      outcome: [
+        "TVL grew from 0 to $50M+",
+        "Live production protocol with real users and real funds",
+        "Audited, maintained, and evolved over multiple releases",
+      ],
+      delay: 0,
+    },
+    {
+      title: "YAM — On-Chain Trading Platform for RWAs",
+      context:
+        "YAM is a secondary market trading platform enabling on-chain trading of tokenized real-world assets.",
+      role: "Smart Contract Engineer — trading logic, integrations, and protocol security.",
+      whatIBuilt: [
+        "Core trading and settlement smart contracts",
+        "Token accounting and transfer logic",
+        "Integration with ERC standards and existing ecosystem contracts",
+        "On-chain/off-chain data indexing using The Graph",
+        "Frontend integration support and production debugging",
+      ],
+      outcome: [
+        "$30M trading volume",
+        "Production deployment with active users",
+        "Core component of the RealToken ecosystem",
+      ],
+      delay: 100,
+    },
+    {
+      title: "RealToken Ecosystem Governance (DAO & Treasury)",
+      context:
+        "Governance system allowing RealToken ecosystem participants to propose, vote on, and execute protocol-level decisions in a decentralized and transparent way.",
+      role: "Lead Smart Contract Engineer — governance architecture and implementation.",
+      whatIBuilt: [
+        "Governance contracts based on Governor pattern",
+        "Proposal lifecycle: creation, voting, execution",
+        "Voting power logic tied to ecosystem tokens",
+        "Treasury contracts controlled by on-chain governance",
+        "Integration with off-chain voting and tallying tools",
+        "Security constraints to protect protocol funds",
+      ],
+      outcome: [
+        "Fully operational DAO governance system",
+        "Token holders actively participate in protocol decisions",
+        "Enabled decentralized upgrades and treasury management",
+      ],
+      delay: 200,
+    },
+    {
+      title: "Cross-Chain Token Bridge — Chainlink CCIP",
+      context:
+        "Secure token bridge enabling cross-chain transfers across multiple EVM networks.",
+      role: "Protocol architect and implementer.",
+      keyDecisions: [
+        "Burn-and-mint architecture to prevent double spending",
+        "Chainlink CCIP for cross-chain security guarantees",
+        "Strict validation, replay protection, and failure handling",
+      ],
+      whatIBuilt: [
+        "CCIP sender/receiver smart contracts",
+        "Token lifecycle management across chains",
+        "Extensive testing in forked and simulated environments",
+      ],
+      outcome: [
+        "Production-grade cross-chain infrastructure",
+        "Used for ecosystem token distribution across chains",
+      ],
+      delay: 300,
+    },
+    {
+      title: "Aquila — Parametric Forest Fire Insurance (Hackathon Winner)",
+      context:
+        "Aquila is a parametric insurance protocol automating payouts for forest fire incidents using real-world data.",
+      role: "Smart Contract Engineer — protocol design and implementation.",
+      whatIBuilt: [
+        "Solidity smart contracts to manage insurance policies and premiums",
+        "Automated payout logic triggered by oracle data",
+        "Integration with Chainlink oracles and nodes",
+        "End-to-end testing and deployment on Ethereum",
+      ],
+      outcome: [
+        "Winner — Chainlink Hackathon (Fall 2021)",
+        "Demonstrated real-world DeFi + oracle-based insurance use case",
+        "Fully functional end-to-end prototype",
+      ],
+      delay: 400,
+    },
+    {
+      title: "ZEur — Zero-Interest Lending Protocol (R&D)",
+      context:
+        "ZEur explores a novel lending model where borrowers pay 0% interest, while lenders earn yield via collateral deployed into liquid staking tokens.",
+      role: "Protocol researcher and designer.",
+      explores: [
+        "Interest-free borrowing mechanics",
+        "Yield redirection via LSTs (Lido, EtherFi, Rocket Pool)",
+        "New incentive structures for borrowers and lenders",
+        "Composability with existing DeFi primitives",
+      ],
+      whatIBuilt: [],
+      outcome: [],
+      status: "Active R&D / early-stage protocol design",
+      delay: 500,
+    },
+  ];
+
+  return (
+    <section id="experience" className="py-24">
+      <div className="section-container">
+        <Reveal>
+          <h2 className="section-title">Selected Protocol Work</h2>
+        </Reveal>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {protocols.map((protocol, index) => (
+            <ProtocolCard key={index} {...protocol} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;
