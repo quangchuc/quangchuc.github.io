@@ -1,0 +1,59 @@
+SELECTED PROTOCOL WORK
+
+Production protocols with real funds and real users; selected hackathon and R&D work below.
+
+————————————————————————————————————————————————————————————
+SELECTED PRODUCTION PROTOCOLS (MAINNET / REAL FUNDS)
+————————————————————————————————————————————————————————————
+
+RMM — Real-World Asset Lending (Mainnet, Audited, TVL $50M+)
+Smart Contract Engineer: protocol architecture, implementation, testing, deployment.
+• Designed and implemented core lending and borrowing logic for RWA-backed tokens; built collateralization, health factor, and liquidation mechanisms.
+• Delivered upgradeable, modular contract architecture for production.
+• Wrote comprehensive test suite: unit, integration, fuzz, and invariant tests; gas optimization and storage layout.
+• Collaborated with external auditors; maintained and evolved protocol over multiple releases.
+• Impact: TVL grew from 0 to $50M+; live production with real users and real funds.
+
+YAM — On-Chain Trading Platform for RWAs (Mainnet, $30M volume)
+Smart Contract Engineer: trading logic, integrations, protocol security.
+• Implemented core trading and settlement smart contracts and token accounting and transfer logic.
+• Integrated with ERC standards and ecosystem contracts; indexed on-chain/off-chain data via The Graph.
+• Supported frontend integration and production debugging.
+• Impact: $30M trading volume; core component of RealToken ecosystem.
+
+RealToken Ecosystem Governance — DAO & Treasury (Mainnet)
+Smart Contract Engineer: governance architecture and implementation.
+• Implemented governance contracts (Governor pattern): proposal lifecycle, voting, execution; tied voting power to ecosystem tokens.
+• Built treasury contracts controlled by on-chain governance; integrated off-chain voting and tallying tools.
+• Enforced security constraints to protect protocol funds.
+• Impact: Fully operational DAO; token holders participate in protocol decisions and decentralized upgrades.
+
+Cross-Chain Token Bridge — Chainlink CCIP (Mainnet, production-grade)
+Protocol architect and implementer.
+• Architected burn-and-mint design to prevent double spending; used Chainlink CCIP for cross-chain security.
+• Implemented CCIP sender/receiver contracts and token lifecycle management across chains.
+• Added strict validation, replay protection, failure handling; tested in forked and simulated environments.
+• Impact: Production-grade cross-chain infrastructure for ecosystem token distribution.
+
+————————————————————————————————————————————————————————————
+SELECTED PROJECTS (HACKATHONS / R&D)
+————————————————————————————————————————————————————————————
+
+Aquila — Parametric Forest Fire Insurance (Chainlink Hackathon Winner, Fall 2021)
+Smart Contract Engineer: protocol design and implementation.
+• Implemented Solidity contracts for insurance policies and premiums; automated payout logic triggered by oracle data.
+• Integrated Chainlink oracles and nodes; end-to-end testing and deployment on Ethereum.
+• Impact: Winner, Chainlink Hackathon Fall 2021; demonstrated DeFi plus oracle-based parametric insurance.
+
+UniYield — Cross-Chain Unified Yield Vault (ETHGlobal Hackathon, Base)
+Smart Contract & Full-Stack Web3 Engineer: protocol architecture, smart contracts, frontend.
+• Implemented ERC-4626 yield vault with Diamond (EIP-2535) proxy; modular strategy adapters for Aave, Morpho, Compound.
+• Built cross-chain deposit flow with LI.FI as transport and execution layer; frontend for LI.FI routing and vault interactions.
+• Deployed and configured on Base mainnet.
+• Impact: Deployed contracts and end-to-end cross-chain UX; composable LI.FI use beyond simple bridging.
+
+ZEUR — Zero-Interest Lending Protocol (Active R&D)
+Protocol researcher and designer.
+• Exploring interest-free borrowing mechanics and yield redirection via LSTs (Lido, EtherFi, Rocket Pool).
+• Designing incentive structures and composability with existing DeFi primitives.
+• Status: Active R&D, early-stage protocol design.
