@@ -225,6 +225,25 @@ const Experience: React.FC = () => {
       delay: 400,
     },
     {
+      title: "UniYield — Cross-Chain Unified Yield Vault (ETHGlobal Hackathon)",
+      context:
+        "UniYield is a cross-chain DeFi protocol that enables one-click stablecoin deposits from any chain into a unified yield-optimizing vault.",
+      role: "Smart Contract & Full-Stack Web3 Engineer — protocol architecture, smart contracts, and frontend integration.",
+      whatIBuilt: [
+        "ERC-4626 yield vault implemented with a Diamond (EIP-2535) proxy architecture",
+        "Modular strategy adapters for Aave, Morpho, and Compound",
+        "Cross-chain deposit flow using LI.FI as a transport and execution layer",
+        "Frontend integrating LI.FI routing, execution, and on-chain vault interactions",
+        "Deployment and configuration on Base mainnet",
+      ],
+      outcome: [
+        "Fully deployed contracts and working end-to-end cross-chain UX",
+        "Demonstrated composable use of LI.FI beyond simple bridging",
+        "Production-style prototype showcasing one-click cross-chain DeFi",
+      ],
+      delay: 450,
+    },
+    {
       title: "ZEUR — Zero-Interest Lending Protocol (R&D)",
       context:
         "ZEUR explores a novel lending model where borrowers pay 0% interest, while lenders earn yield via collateral deployed into liquid staking tokens.",
